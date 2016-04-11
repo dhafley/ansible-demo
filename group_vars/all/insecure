@@ -1,0 +1,18 @@
+
+nginx_sites:
+ - server:
+    file_name: monday
+    listen: 80
+    server_name: localhost
+    root: "/tmp/site1"
+    location1: {name: /, try_files: "$uri $uri/ /index.html"}
+
+mysql_port: 3306
+mysql_replication: False
+mysql_configure_slave: False
+mysql_log_bin: "/var/lib/mysql/binary-log"
+mysql_expire_logs_days: 5
+
+my_programs:
+  - { name: htop, version: "1.0.2-3" }
+  - { name: ntp, version: "1:4.2.6.p5+dfsg-3ubuntu2" }

@@ -1,5 +1,21 @@
 ---
-- hosts: all
+- hosts: appserver
+  become: True
   roles:
-    - jumpcloud
+    - php5
+    - nginx
+  tasks:
+    - name: Copy index.html to guest
+      copy: src=files/index.html dest=/tmp/site1/index.html
 
+- hosts: database
+  become: True
+  roles:
+    - mysql
+
+- hosts: all
+  become: True
+  tasks:
+    - name: Install some packages
+      apt: name={{ item.name }}={{ item.version }} state=present update_cache=yes
+      with_items: "{{ my_programs }}"

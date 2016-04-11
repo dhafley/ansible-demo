@@ -1,9 +1,9 @@
 [appserver]
-appserver.local   ansible_ssh_host=10.10.10.11
+app1.local        ansible_ssh_host=10.10.10.11
 
-[mysql]
+[database]
 mysql.local       ansible_ssh_host=10.10.10.21
 
 [local:children]
 appserver
-mysql
+database
