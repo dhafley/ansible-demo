@@ -5,6 +5,9 @@
     - php5
     - nginx
   tasks:
+    - name: Create directory
+      file: path=/tmp/site1 state=directory
+
     - name: Copy index.html to guest
       copy: src=files/index.html dest=/tmp/site1/index.html
 
