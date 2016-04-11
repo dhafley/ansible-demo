@@ -1,0 +1,13 @@
+- src: git@github.com:bennojoy/nginx.git
+  scm: git
+  name: nginx
+
+- src: git@github.com:bennojoy/mysql.git
+  scm: git
+  name: mysql
+
+- src: git@github.com:debops/ansible-php5.git
+  scm: git
+  name: php5
+
+
